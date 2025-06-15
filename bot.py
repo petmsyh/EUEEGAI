@@ -1,9 +1,14 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 import os
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+BOT_TOKEN = os.getenv("TELEGRAM_TOKEN")
+
+print(f"Using API URL: {BOT_TOKEN}")
 # Replace with your bot token from BotFather
-BOT_TOKEN = "7953444669:AAHCEHb6k-ld7vPaWGo8WONj59tQzyOVpmc"
 
 # Command to start the bot
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
