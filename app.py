@@ -8,11 +8,11 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-API_URL = os.getenv("API_URL")
+API_URL = os.getenv("GEMNIE_API_KEY")
 
 print(f"Using API URL: {API_URL}")
 # --- Gemini API Setupp ---
-genai.configure(api_key="AIzaSyBDW0rlOkyG9YEKPkYmI3ovYJ1YcY5cMZQ")
+genai.configure(api_key="API_URL")
 model_gemini = genai.GenerativeModel("gemini-2.0-flash")
 
 def build_gemini_prompt(results):
