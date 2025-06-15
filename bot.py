@@ -3,6 +3,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import os
 from dotenv import load_dotenv
 import os
+from qa_core import answer_query  # <-- Import your QA logic
 
 load_dotenv()
 BOT_TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -17,8 +18,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Handle text messages
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
-    # Example: Echo the user's message (you can integrate with Streamlit here)
-    response = f"You said: {user_message}"
+    response = answer_query(user_message)  # <-- Use your QA logic
     await update.message.reply_text(response)
 
 def main():
