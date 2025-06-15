@@ -71,7 +71,7 @@ model = load_model()
 
 @st.cache_resource
 def load_points():
-    with open("D:/project/EUEEAI/asset/Embeddings/Geography_history_questions_points.pkl", "rb") as f:
+    with open("D:/project/EUEEAI/asset_/Embeddings/Geography_history_questions_points.pkl", "rb") as f:
         return pickle.load(f)
 points = load_points()
 
