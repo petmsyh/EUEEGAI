@@ -4,7 +4,13 @@ from sentence_transformers import SentenceTransformer
 from vector_search import local_similarity_search
 import google.generativeai as genai
 import re
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+API_URL = os.getenv("API_URL")
+
+print(f"Using API URL: {API_URL}")
 # --- Gemini API Setupp ---
 genai.configure(api_key="AIzaSyBDW0rlOkyG9YEKPkYmI3ovYJ1YcY5cMZQ")
 model_gemini = genai.GenerativeModel("gemini-2.0-flash")
