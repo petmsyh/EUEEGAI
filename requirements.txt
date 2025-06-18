@@ -14,6 +14,7 @@ comm==0.2.2
 debugpy==1.8.13
 decorator==5.2.1
 executing==2.2.0
+fastapi==0.115.13
 filelock==3.18.0
 Flask==3.1.1
 flask-cors==6.0.1
