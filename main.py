@@ -124,3 +124,8 @@ async def get_answer(request: QueryRequest):
 @app.get("/")
 def read_root():
     return {"message": "EUEE AI backend is running!"}
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 7860))  # Use $PORT if set, else 7860
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
